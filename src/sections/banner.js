@@ -21,7 +21,6 @@ export default function Banner() {
             Explore 
           </Button>
         </Box>
-        
         <Box sx={styles.banner.imageBox}>
           <Image src={BannerImg} alt='banner' />
         </Box>
