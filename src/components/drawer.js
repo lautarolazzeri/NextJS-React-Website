@@ -34,6 +34,7 @@ export default function Drawer ({
             {closeButton}
           </Box>
         )}
+        
           <Box sx={drawerStyle}>{children}</Box>
           </RcDrawer>
           <Box className='drawer__handler' style={{display: 'inline-block'}} onClick={toggleHandler}>
