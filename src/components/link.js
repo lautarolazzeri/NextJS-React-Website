@@ -7,7 +7,6 @@ export function NavLink({ path, label, children, ...rest }) {
     <h1>NavLink</h1>
   );
 }
-
 export function Link({ path, label, children, ...rest }) {
   return (
     <A {...rest} href={path}>
