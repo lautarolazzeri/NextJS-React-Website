@@ -45,7 +45,7 @@ const data = [
 
 export default function KeyFeature() {
   return (
-   <h1>Key Feature</h1>
+   <h1>Changes to commit</h1>
   );
 }
 
