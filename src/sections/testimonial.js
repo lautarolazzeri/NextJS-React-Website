@@ -27,8 +27,8 @@ const data = [
     description:
       'Get working experience to work with this amazing team & in future want to work together for bright future projects and also make deposit to freelancer.',
     avatar: Avatar2,
-    name: 'Denny Hilguston',
-    designation: '@denny.hil',
+    name: 'John Doe',
+    designation: '@John.Doe',
     review: 5,
   },
   {
@@ -37,8 +37,8 @@ const data = [
     description:
       'Get working experience to work with this amazing team & in future want to work together for bright future projects and also make deposit to freelancer.',
     avatar: Avatar3,
-    name: 'Denny Hilguston',
-    designation: '@denny.hil',
+    name: 'Lautaro Lazzeri',
+    designation: '@Lautaro.Lazzeri',
     review: 5,
   },
   {
@@ -47,8 +47,8 @@ const data = [
     description:
       'Get working experience to work with this amazing team & in future want to work together for bright future projects and also make deposit to freelancer.',
     avatar: Avatar4,
-    name: 'Denny Hilguston',
-    designation: '@denny.hil',
+    name: 'Thomas Robinson',
+    designation: '@Thomas.Robinson',
     review: 4,
   },
 ];
@@ -57,22 +57,22 @@ const responsive = {
   desktop: {
     breakpoint: { max: 3000, min: 1619 },
     items: 4,
-    slidesToSlide: 4, // optional, default to 1.
+    slidesToSlide: 4,
   },
   laptop: {
     breakpoint: { max: 1619, min: 1024 },
     items: 3,
-    slidesToSlide: 3, // optional, default to 1.
+    slidesToSlide: 3,
   },
   tablet: {
     breakpoint: { max: 1024, min: 640 },
     items: 2,
-    slidesToSlide: 2, // optional, default to 1.
+    slidesToSlide: 2,
   },
   mobile: {
     breakpoint: { max: 639, min: 0 },
     items: 1,
-    slidesToSlide: 1, // optional, default to 1.
+    slidesToSlide: 1,
   },
 };
 
@@ -101,7 +101,42 @@ const carouselParams = {
 
 export default function TestimonialCard() {
   return (
-   <h1>Testimonial Card</h1>
+    <section id='testimonial' sx={{ variant: 'section.testimonial'}}>
+      <Container css={{textAlign: 'center'}}>
+        <SectionHeader 
+          slogan='Testimonial'
+          title='Meet Client Satisfaction'
+        />
+      </Container>
+      <Box sx={styles.carouselWrapper}>
+        <Carousel {...carouselParams}>
+          {data.map((item) =>(
+            <Box sx={styles.reviewCard} key={item.sliderClass}>
+              <Rating rating={item.review} />
+              <Heading as='h3' sx={styles.title}>
+                {item.title}
+              </Heading>
+              <Text sx={styles.description}>
+                {item.description}
+              </Text>
+              <div className='card-footer'>
+                <div className='image'>
+                  <Image src={item.avatar} alt='Client Image' /> 
+                </div>
+                <div className='reviewer-info'>
+                  <Heading as='h4' sx={styles.heading}>
+                    {item.name}
+                  </Heading>
+                  <Text sx={styles.designation}>
+                    {item.designation}
+                  </Text>
+                </div>
+              </div>
+            </Box>
+          ))}
+        </Carousel>
+      </Box>
+    </section>
   );
 }
 
